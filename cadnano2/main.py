@@ -8,7 +8,7 @@ Created by Shawn Douglas on 2010-09-26.
 
 import sys
 import os
-sys.path.insert(0, '.')
+sys.path.insert(0, os.path.dirname(__file__))
 import cadnano
 
 if "-t" in sys.argv:
@@ -16,7 +16,7 @@ if "-t" in sys.argv:
 
 cadnano.initAppWithGui()
 
-if __name__ == '__main__':
+def main():
     app = cadnano.app()
     if "-p" in sys.argv:
         print("Collecting profile data into cadnano.profile")
@@ -39,3 +39,6 @@ if __name__ == '__main__':
         runTests(useXMLRunner=False)
         exit()
     app.exec_()
+
+if __name__ == '__main__':
+    sys.exit(main() or 0)
