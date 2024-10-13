@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
@@ -12,7 +12,7 @@ setup(
     url='https://github.com/mtaku3/cadnano2',
     author='mtaku3',
     license='MIT',
-    packages=['cadnano2'],
+    packages=find_packages(),
     package_data={'cadnano': ['ui/mainwindow/images/*.svg', 'ui/mainwindow/images/*.png']},
     install_requires=['PyQt5'],
     entry_points = {'console_scripts': ['cadnano2 = cadnano2.main:main']},
